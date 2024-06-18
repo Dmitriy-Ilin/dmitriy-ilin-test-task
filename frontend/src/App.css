@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #1c1c1c;
+}
+
+.img {
+  display: block;
+}
+
+button {
+  display: block;
+  border: none;
+  font-size: 22px;
+  font-family: inherit;
+  border-radius: 16px;
+  background-color: inherit;
+  transition: all 0.2s ease-in;
+  color: #1c1c1c;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 744px;
+  margin: 0 auto;
+}
+
+.main {
+  padding: 64px 0 126px;
+}
+
+.main__btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.main__btn {
+  display: block;
+  border: none;
+  font-size: 22px;
+  font-family: inherit;
+  border-radius: 16px;
+  background-color: inherit;
+  transition: all 0.2s ease-in;
+  padding: 16px 0;
+  width: 100%;
+  color: #1c1c1c;
+  text-decoration: none;
+}
+
+.main__btn:hover,
+.active {
+  color: #117dc1;
+  background-color: #edf9ff;
+}
+
+.main__btn--actve {
+  background-color: #edf9ff;
+}
+
+.users {
+  margin-top: 42px;
+}
+
+.user__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.user__item {
+  width: 100%;
+  padding: 25px 0;
+}
+
+.user__btn,
+.albums__btn {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 130%;
+  text-align: left;
+}
+
+.user__active {
+  width: 32px;
+  height: 32px;
+  padding: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid rgb(255, 255, 255);
+  color: #fff;
+  background-color: #117dc1;
+}
+
+.albums {
+  padding: 25px 0 32px;
+}
+
+.grid {
+  margin-top: 32px;
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 42px;
+}
+
+.albums__btn {
+  margin-left: 56px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.album__container {
+  max-width: 534px;
+  margin: 0 auto;
+}
+
+.grid__item {
+  position: relative;
+}
+
+.grid__item-star {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  content: '';
+  right: 8px;
+  top: 8px;
+  width: 32px;
+  height: 32px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  fill: red;
+}
+
+.grid__item--filled::before {
+  background-image: url('src/assets/star-filled.svg');
+}
+
+.grid__item-img {
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(208, 208, 208, 0.47);
+}
+
+.modal__close {
+  position: absolute;
+  content: '';
+  top: 32px;
+  right: 40px;
+  width: 24px;
+  height: 24px;
+  background-image: url('src/assets/close.svg');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.modal--active {
+  display: flex;
+  z-index: 100;
+}
+
+.modal__img {
+  width: 600px;
+  height: 600px;
+}
+
+.favorites {
+  padding: 56px 0;
+}
+
+.favorites__item {
+  margin: 0 auto;
+  position: relative;
+}
+
+.favorites__item-img,
+.grid__item-img {
+  border-radius: 4px;
+}
+
+.favorites__item-text {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #787878;
+}
+
+.favorites__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 42px;
+}
+
+.favorites__empty {
+  margin: 205px auto 0;
+  text-align: center;
+  color: #1c1c1c;
+}
+
+.favorites__empty-title {
+  margin-top: 32px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+.favorites__empty-text {
+  margin-top: 8px;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.custom-tooltip {
+  position: relative;
+}
+
+.custom-tooltip__content {
+  width: 150px;
+  position: absolute;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.69);
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: normal;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 130%;
+  cursor: pointer;
+  z-index: 5;
+}
+
